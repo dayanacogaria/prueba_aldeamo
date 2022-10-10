@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: false
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bartender?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password:
+
+server:
+  port: 8081
+
+logging:
+  path: /var/log/prueba
+  level:
+    org.springframework.web: error
+    org.hibernate: error
+    com.sigiep.controllers: error
+    com.sigiep.config: error
+

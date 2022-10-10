@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: mysql
+
+
+  main:
+    lazy-initialization: true
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: fa/loginlse
+        ddl-auto: none
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    open-in-view: false
+
+  session:
+    store-type: none
+    servlet:
+      filter-order: -2147483598
+      filter-dispatcher-types: async,error,request
+
+  servlet:
+    multipart:
+      max-file-size: 50000KB
+      max-request-size: 50000KB
+
+server:
+  servlet:
+    session:
+      timeout: 720m
+
+management:
+  health:
+    ldap:
+      enabled: false
